@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "raisedclouds",
+	"version": "${version}",
+	"name": "Raised Clouds",
+	"description": "Allows changing the height at which clouds appear.",
+	"authors": [
+		"haykam821"
+	],
+	"contact": {
+		"homepage": "https://github.com/haykam821/Raised-Clouds#readme",
+		"issues": "https://github.com/haykam821/Raised-Clouds/issues"
+	},
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"io.github.haykam821.raisedclouds.ClientMain"
+		],
+		"modmenu": [
+			"io.github.haykam821.raisedclouds.config.ModMenuCompatibility"
+		]
+	},
+	"mixins": [
+		"raisedclouds.mixin.json"
+	],
+	"license": "MIT",
+	"icon": "assets/raisedclouds/icon.png",
+	"depends": {
+		"fabricloader": ">=0.4.0"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}

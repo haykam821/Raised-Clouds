@@ -1,0 +1,14 @@
+{
+	"text.autoconfig.raisedclouds.option.baseY": "Base Y",
+	"text.autoconfig.raisedclouds.option.baseY.@Tooltip": "The base Y of the clouds.",
+	"text.autoconfig.raisedclouds.option.cameraAnchor": "Camera Anchor",
+	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[0]": "Whether the clouds should be anchored",
+	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[1]": "to the camera's position.",
+	"text.autoconfig.raisedclouds.option.overrideBaseY": "Override Base Y",
+	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[0]": "Whether the base Y of the clouds",
+	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[1]": "should use the value below, instead",
+	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[2]": "of the per-world base Y.",
+	"text.autoconfig.raisedclouds.option.scale": "Scale",
+	"text.autoconfig.raisedclouds.option.scale.@Tooltip": "The scale of the Y position of the clouds.",
+	"text.autoconfig.raisedclouds.title": "Raised Clouds Configuration"
+}
