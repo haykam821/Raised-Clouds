@@ -1,0 +1,14 @@
+{
+	"text.autoconfig.raisedclouds.option.baseY": "云层高度",
+	"text.autoconfig.raisedclouds.option.baseY.@Tooltip": "云层的高度，即云层Y轴的值。",
+	"text.autoconfig.raisedclouds.option.cameraAnchor": "摄像机约束",
+	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[0]": "云层的高度将会随着玩家当前视角的",
+	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[1]": "摄像机高度的变化而变化。",
+	"text.autoconfig.raisedclouds.option.overrideBaseY": "应用“云层高度”",
+	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[0]": "启用该设置后，才可以使用",
+	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[1]": "“云层高度”中设置的高度，",
+	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[2]": "否则使用原版的云层高度。",
+	"text.autoconfig.raisedclouds.option.scale": "倍率",
+	"text.autoconfig.raisedclouds.option.scale.@Tooltip": "云层实际的高度值等于“云层高度”乘以“倍率”。",
+	"text.autoconfig.raisedclouds.title": "Raised Clouds配置"
+}
