@@ -12,6 +12,6 @@
 	"text.autoconfig.raisedclouds.option.scale": "Height scale",
 	"text.autoconfig.raisedclouds.option.scale.@Tooltip[0]": "The multiplier that is used for",
 	"text.autoconfig.raisedclouds.option.scale.@Tooltip[1]": "the height calculation, for advanced",
-	"text.autoconfig.raisedclouds.option.scale.@Tooltip[1]": "users only.",
+	"text.autoconfig.raisedclouds.option.scale.@Tooltip[2]": "users only.",
 	"text.autoconfig.raisedclouds.title": "Raised Clouds Configuration"
 }
