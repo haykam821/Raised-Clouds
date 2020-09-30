@@ -1,6 +1,6 @@
 {
 	"text.autoconfig.raisedclouds.option.baseY": "Height",
-	"text.autoconfig.raisedclouds.option.baseY.@Tooltip": "The height of the clouds.",
+	"text.autoconfig.raisedclouds.option.baseY.@Tooltip": "The height (Y-axis) of the clouds.",
 	"text.autoconfig.raisedclouds.option.cameraAnchor": "Lock to view",
 	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[0]": "Whether the clouds should be positioned",
 	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[1]": "relative to you, instead of being",
