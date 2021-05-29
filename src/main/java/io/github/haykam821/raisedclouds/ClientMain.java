@@ -1,8 +1,8 @@
 package io.github.haykam821.raisedclouds;
 
 import io.github.haykam821.raisedclouds.config.RaisedCloudsConfig;
-import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 
 public class ClientMain implements ClientModInitializer {

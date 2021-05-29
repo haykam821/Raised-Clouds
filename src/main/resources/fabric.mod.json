@@ -29,6 +29,6 @@
 		"fabricloader": ">=0.4.0"
 	},
 	"suggests": {
-		"modmenu": "*"
+		"modmenu": ">=1.15.0"
 	}
 }
