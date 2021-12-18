@@ -3,6 +3,7 @@
 	"package": "io.github.haykam821.raisedclouds.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"client": [
+		"OverworldDimensionEffectsAccessor",
 		"WorldRendererMixin"
 	],
 	"injectors": {

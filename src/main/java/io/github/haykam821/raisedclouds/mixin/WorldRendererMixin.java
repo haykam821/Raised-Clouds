@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import io.github.haykam821.raisedclouds.ClientMain;
 import io.github.haykam821.raisedclouds.config.RaisedCloudsConfig;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.world.ClientWorld;
 
@@ -22,23 +21,10 @@ public class WorldRendererMixin {
 	private ClientWorld world;
 
 	@Unique
-	private RaisedCloudsConfig CONFIG = ClientMain.getConfig();
+	private static final RaisedCloudsConfig raisedclouds$CONFIG = ClientMain.getConfig();
 
-	@Unique
-	private float getBaseY() {
-		return (float) ((CONFIG.overrideBaseY ? CONFIG.baseY : this.world.getSkyProperties().getCloudsHeight()) * CONFIG.scale);
-	}
-
-	@ModifyVariable(method = "renderClouds", index = 18, at = @At(value = "STORE"))
+	@ModifyVariable(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V", ordinal = 6, at = @At("STORE"))
 	private double getCloudY(double cloudY) {
-		float baseY = this.getBaseY();
-		if (CONFIG.cameraAnchor) {
-			return baseY;
-		} else {
-			Camera camera = this.client.gameRenderer.getCamera();
-			float cameraY = (float) camera.getPos().getY();
-
-			return baseY - cameraY + 0.33f;
-		}
+		return raisedclouds$CONFIG.getCloudY(this.client, this.world, cloudY);
 	}
 }
