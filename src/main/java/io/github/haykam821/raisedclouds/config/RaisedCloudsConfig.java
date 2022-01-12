@@ -23,6 +23,9 @@ public class RaisedCloudsConfig implements ConfigData {
 	@ConfigEntry.Gui.Tooltip(count = 2)
 	public boolean cameraAnchor = false;
 
+	@ConfigEntry.Gui.Tooltip
+	public float height = 4;
+
 	private float getBaseY(ClientWorld world) {
 		return (float) ((this.overrideBaseY ? this.baseY : world.getDimensionEffects().getCloudsHeight()) * this.scale);
 	}

@@ -4,6 +4,8 @@
 	"text.autoconfig.raisedclouds.option.cameraAnchor": "Camera Anchor",
 	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[0]": "Whether the clouds should be anchored",
 	"text.autoconfig.raisedclouds.option.cameraAnchor.@Tooltip[1]": "to the camera's position.",
+	"text.autoconfig.raisedclouds.option.height": "Height",
+	"text.autoconfig.raisedclouds.option.height.@Tooltip": "The height of the clouds.",
 	"text.autoconfig.raisedclouds.option.overrideBaseY": "Override Base Y",
 	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[0]": "Whether the base Y of the clouds",
 	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[1]": "should use the value below, instead",

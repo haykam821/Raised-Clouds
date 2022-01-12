@@ -4,6 +4,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 import io.github.haykam821.raisedclouds.ClientMain;
@@ -26,5 +28,21 @@ public class WorldRendererMixin {
 	@ModifyVariable(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V", ordinal = 6, at = @At("STORE"))
 	private double getCloudY(double cloudY) {
 		return raisedclouds$CONFIG.getCloudY(this.client, this.world, cloudY);
+	}
+
+	@ModifyConstant(method = {
+		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
+		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)V"
+	}, constant = @Constant(floatValue = 4))
+	private float getCloudHeight(float cloudHeight) {
+		return raisedclouds$CONFIG.height;
+	}
+
+	@ModifyConstant(method = {
+		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
+		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)V"
+	}, constant = @Constant(doubleValue = 4))
+	private double getCloudHeight(double cloudHeight) {
+		return (double) raisedclouds$CONFIG.height;
 	}
 }
