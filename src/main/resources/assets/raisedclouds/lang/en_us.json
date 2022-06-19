@@ -12,5 +12,8 @@
 	"text.autoconfig.raisedclouds.option.overrideBaseY.@Tooltip[2]": "of the per-world base Y.",
 	"text.autoconfig.raisedclouds.option.scale": "Scale",
 	"text.autoconfig.raisedclouds.option.scale.@Tooltip": "The scale of the Y position of the clouds.",
+	"text.autoconfig.raisedclouds.option.speed": "Speed",
+	"text.autoconfig.raisedclouds.option.speed.@Tooltip[0]": "The speed at which the clouds move,",
+	"text.autoconfig.raisedclouds.option.speed.@Tooltip[1]": "relative to the default speed of 1.",
 	"text.autoconfig.raisedclouds.title": "Raised Clouds Configuration"
 }

@@ -30,6 +30,11 @@ public class WorldRendererMixin {
 		return raisedclouds$CONFIG.getCloudY(this.client, this.world, cloudY);
 	}
 
+	@ModifyConstant(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V", constant = @Constant(floatValue = 0.03f))
+	private float getCloudSpeed(float cloudSpeed) {
+		return cloudSpeed * raisedclouds$CONFIG.speed;
+	}
+
 	@ModifyConstant(method = {
 		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
 		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;"
