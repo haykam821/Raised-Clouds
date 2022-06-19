@@ -32,7 +32,7 @@ public class WorldRendererMixin {
 
 	@ModifyConstant(method = {
 		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
-		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)V"
+		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;"
 	}, constant = @Constant(floatValue = 4))
 	private float getCloudHeight(float cloudHeight) {
 		return raisedclouds$CONFIG.height;
@@ -40,7 +40,7 @@ public class WorldRendererMixin {
 
 	@ModifyConstant(method = {
 		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
-		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)V"
+		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;"
 	}, constant = @Constant(doubleValue = 4))
 	private double getCloudHeight(double cloudHeight) {
 		return (double) raisedclouds$CONFIG.height;
