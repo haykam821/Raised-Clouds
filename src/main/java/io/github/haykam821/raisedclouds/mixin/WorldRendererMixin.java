@@ -25,18 +25,18 @@ public class WorldRendererMixin {
 	@Unique
 	private static final RaisedCloudsConfig raisedclouds$CONFIG = ClientMain.getConfig();
 
-	@ModifyVariable(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V", ordinal = 6, at = @At("STORE"))
+	@ModifyVariable(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FDDD)V", ordinal = 6, at = @At("STORE"))
 	private double getCloudY(double cloudY) {
 		return raisedclouds$CONFIG.getCloudY(this.client, this.world, cloudY);
 	}
 
-	@ModifyConstant(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V", constant = @Constant(floatValue = 0.03f))
+	@ModifyConstant(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FDDD)V", constant = @Constant(floatValue = 0.03f))
 	private float getCloudSpeed(float cloudSpeed) {
 		return cloudSpeed * raisedclouds$CONFIG.speed;
 	}
 
 	@ModifyConstant(method = {
-		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
+		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FDDD)V",
 		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;"
 	}, constant = @Constant(floatValue = 4))
 	private float getCloudHeight(float cloudHeight) {
@@ -44,7 +44,7 @@ public class WorldRendererMixin {
 	}
 
 	@ModifyConstant(method = {
-		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
+		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FDDD)V",
 		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;"
 	}, constant = @Constant(doubleValue = 4))
 	private double getCloudHeight(double cloudHeight) {
