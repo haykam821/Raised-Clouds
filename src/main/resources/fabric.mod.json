@@ -23,6 +23,11 @@
 	"mixins": [
 		"raisedclouds.mixin.json"
 	],
+	"custom": {
+		"sodium:options": {
+			"mixin.features.clouds": false
+		}
+	},
 	"license": "MIT",
 	"icon": "assets/raisedclouds/icon.png",
 	"depends": {
