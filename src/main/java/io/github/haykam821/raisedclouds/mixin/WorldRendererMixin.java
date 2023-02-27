@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
@@ -49,5 +50,10 @@ public class WorldRendererMixin {
 	}, constant = @Constant(doubleValue = 4))
 	private double getCloudHeight(double cloudHeight) {
 		return (double) raisedclouds$CONFIG.height;
+	}
+
+	@ModifyArg(method = "renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/VertexConsumer;color(FFFF)Lnet/minecraft/client/render/VertexConsumer;"), index = 3)
+	private float getCloudOpacity(float cloudOpacity) {
+		return raisedclouds$CONFIG.opacity;
 	}
 }
