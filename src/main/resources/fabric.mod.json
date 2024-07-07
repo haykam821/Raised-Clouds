@@ -24,6 +24,11 @@
 		"raisedclouds.mixin.json"
 	],
 	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://haykam.com/links/discord"
+			}
+		},
 		"sodium:options": {
 			"mixin.features.clouds": false,
 			"mixin.features.render.world.clouds": false
