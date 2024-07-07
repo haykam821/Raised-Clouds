@@ -9,7 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://github.com/haykam821/Raised-Clouds#readme",
-		"issues": "https://github.com/haykam821/Raised-Clouds/issues"
+		"issues": "https://github.com/haykam821/Raised-Clouds/issues",
+		"sources": "https://github.com/haykam821/Raised-Clouds"
 	},
 	"environment": "client",
 	"entrypoints": {
