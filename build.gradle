@@ -24,6 +24,10 @@ repositories {
 		url = "https://maven.terraformersmc.com/"
 	}
 	maven {
+		name = "Nucleoid"
+		url = "https://maven.nucleoid.xyz/"
+	}
+	maven {
 		name = "Modrinth"
 		url = "https://api.modrinth.com/maven/"
 	}
