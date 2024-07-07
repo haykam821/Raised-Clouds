@@ -3,9 +3,6 @@ plugins {
 	id "maven-publish"
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
-
 archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
@@ -22,10 +19,6 @@ repositories {
 	maven {
 		name = "TerraformersMC"
 		url = "https://maven.terraformersmc.com/"
-	}
-	maven {
-		name = "Nucleoid"
-		url = "https://maven.nucleoid.xyz/"
 	}
 	maven {
 		name = "Modrinth"
@@ -58,7 +51,13 @@ processResources {
 	}
 }
 
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
 tasks.withType(JavaCompile) {
+	options.release = 21
 	options.encoding = "UTF-8"
 }
 

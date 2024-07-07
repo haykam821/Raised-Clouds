@@ -33,7 +33,8 @@
 	"icon": "assets/raisedclouds/icon.png",
 	"depends": {
 		"fabricloader": ">=0.4.0",
-		"cloth-config2": "*"
+		"cloth-config2": "*",
+		"java": ">=21"
 	},
 	"suggests": {
 		"modmenu": ">=1.15.0"
