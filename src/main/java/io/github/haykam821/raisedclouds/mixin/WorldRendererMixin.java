@@ -38,7 +38,7 @@ public class WorldRendererMixin {
 
 	@ModifyConstant(method = {
 		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;Lorg/joml/Matrix4f;FDDD)V",
-		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;"
+		"buildCloudsBuffer(Lnet/minecraft/client/render/Tessellator;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BuiltBuffer;"
 	}, constant = @Constant(floatValue = 4))
 	private float getCloudHeight(float cloudHeight) {
 		return raisedclouds$CONFIG.height;
@@ -46,13 +46,13 @@ public class WorldRendererMixin {
 
 	@ModifyConstant(method = {
 		"renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;Lorg/joml/Matrix4f;FDDD)V",
-		"renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;"
+		"buildCloudsBuffer(Lnet/minecraft/client/render/Tessellator;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BuiltBuffer;"
 	}, constant = @Constant(doubleValue = 4))
 	private double getCloudHeight(double cloudHeight) {
 		return (double) raisedclouds$CONFIG.height;
 	}
 
-	@ModifyArg(method = "renderClouds(Lnet/minecraft/client/render/BufferBuilder;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/VertexConsumer;color(FFFF)Lnet/minecraft/client/render/VertexConsumer;"), index = 3)
+	@ModifyArg(method = "buildCloudsBuffer(Lnet/minecraft/client/render/Tessellator;DDDLnet/minecraft/util/math/Vec3d;)Lnet/minecraft/client/render/BuiltBuffer;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/VertexConsumer;color(FFFF)Lnet/minecraft/client/render/VertexConsumer;"), index = 3)
 	private float getCloudOpacity(float cloudOpacity) {
 		return raisedclouds$CONFIG.opacity;
 	}
