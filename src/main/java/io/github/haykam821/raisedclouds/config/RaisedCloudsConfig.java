@@ -37,15 +37,15 @@ public class RaisedCloudsConfig implements ConfigData {
 		return (float) ((this.overrideBaseY ? this.baseY : world.getDimensionEffects().getCloudsHeight()) * this.scale);
 	}
 
-	public double getCloudY(MinecraftClient client, ClientWorld world, double cloudY) {
+	public float getCloudY(MinecraftClient client, ClientWorld world) {
 		float baseY = this.getBaseY(world);
 		if (this.cameraAnchor) {
-			return baseY;
-		} else {
 			Camera camera = client.gameRenderer.getCamera();
 			float cameraY = (float) camera.getPos().getY();
 
-			return baseY - cameraY + 0.33f;
+			return baseY + cameraY;
+		} else {
+			return baseY + 0.33f;
 		}
 	}
 
