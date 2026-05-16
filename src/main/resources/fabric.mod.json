@@ -22,7 +22,7 @@
 		]
 	},
 	"mixins": [
-		"raisedclouds.mixin.json"
+		"raisedclouds.client.mixin.json"
 	],
 	"custom": {
 		"modmenu": {
@@ -39,7 +39,7 @@
 	"depends": {
 		"fabricloader": ">=0.4.0",
 		"cloth-config2": "*",
-		"java": ">=21"
+		"java": ">=25"
 	},
 	"suggests": {
 		"modmenu": ">=1.15.0"
