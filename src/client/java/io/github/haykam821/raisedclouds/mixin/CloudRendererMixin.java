@@ -9,28 +9,27 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 import io.github.haykam821.raisedclouds.ClientMain;
 import io.github.haykam821.raisedclouds.config.RaisedCloudsConfig;
-import net.minecraft.client.render.CloudRenderer;
+import net.minecraft.client.renderer.CloudRenderer;
+import net.minecraft.util.ARGB;
 
 @Mixin(CloudRenderer.class)
 public class CloudRendererMixin {
 	@Unique
 	private static final RaisedCloudsConfig raisedclouds$CONFIG = ClientMain.getConfig();
 
-	@ModifyConstant(method = "renderClouds(ILnet/minecraft/client/option/CloudRenderMode;FLorg/joml/Matrix4f;Lorg/joml/Matrix4f;Lnet/minecraft/util/math/Vec3d;F)V", constant = @Constant(floatValue = 0.030000001f))
+	@ModifyConstant(method = "render", constant = @Constant(floatValue = 0.030000001f))
 	private float getCloudSpeed(float cloudSpeed) {
 		return cloudSpeed * raisedclouds$CONFIG.speed;
 	}
 
-	@ModifyConstant(method = {
-		"renderClouds(ILnet/minecraft/client/option/CloudRenderMode;FLorg/joml/Matrix4f;Lorg/joml/Matrix4f;Lnet/minecraft/util/math/Vec3d;F)V",
-		"buildCloudCellFancy"
-	}, constant = @Constant(floatValue = 4))
+	@ModifyConstant(method = "render", constant = @Constant(floatValue = 4.0f, ordinal = 1))
 	private float getCloudHeight(float cloudHeight) {
 		return raisedclouds$CONFIG.height;
 	}
 
-	@ModifyArg(method = "tessellateClouds", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/ColorHelper;fromFloats(FFFF)I"), index = 0)
-	private float getCloudOpacity(float cloudOpacity) {
-		return raisedclouds$CONFIG.opacity;
+	@ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/ARGB;vector4fFromARGB32(I)Lorg/joml/Vector4f;"))
+	private int getCloudOpacity(int color) {
+		int alpha = (int) (ARGB.alpha(color) * raisedclouds$CONFIG.opacity);
+		return ARGB.color(alpha, ARGB.red(color), ARGB.green(color), ARGB.blue(color));
 	}
 }
